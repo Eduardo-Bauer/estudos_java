@@ -2,27 +2,15 @@ package br.com.java.banco;
 
 public class TesteConta {
 	public static void main(String[] args) {
-		Conta contaCorrente = new Conta();
-		Conta contaPoupanca = new Conta(234, 1, 1000);
+		ContaCorrente contaCorrente = new ContaCorrente();
+		Conta cc = new ContaCorrente();
 		
-		// adicionando valores para teste
-		contaCorrente.setAgencia(230);
-		contaCorrente.setNumero(321);
+		contaCorrente.setChequeEspecial(100);
+		System.out.println(contaCorrente.getSaldoDisponivel());
 		
-		// teste de deposito
-		contaCorrente.depositar(100);
-		System.out.println(contaCorrente.getSaldo());
-		
-		// teste de retirada
-		contaCorrente.retirar(100);
-		System.out.println(contaCorrente.getSaldo());
-		
-		// teste de deposito
-		contaPoupanca.depositar(500);
-		System.out.println(contaPoupanca.getSaldo());
-		
-		// teste de retirada
-		contaPoupanca.retirar(500);
-		System.out.println(contaPoupanca.getSaldo());
+		//cast de classes
+		if (cc instanceof ContaCorrente) {
+			ContaCorrente conta1 = (ContaCorrente) cc;
+		}
 	}
 }
